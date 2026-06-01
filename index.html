@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JENNIFER ALLOU — The Birthday Issue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <!-- Background audio (replace src with your file) -->
+  <audio id="bg-audio" src="audio/Didi B - History (official Music Video).mp3" preload="auto" loop autoplay muted playsinline></audio>
+
+
+<!-- Loading Screen -->
+<div id="loading-screen">
+  <div class="loading-logo">Jennifer Allou</div>
+  <div class="loading-bar"></div>
+  <div class="loading-tagline">Bon Anniversaire</div>
+</div>
+
+<!-- Navigation -->
+<nav id="nav">
+  <a href="#cover" class="nav-logo">JA</a>
+  <ul class="nav-links">
+    <li><a href="#editors-letter">Lettre</a></li>
+    <li><a href="#gallery">Galerie</a></li>
+    <li><a href="#videos">Vidéos</a></li>
+    <li><a href="#memories">Mémoires</a></li>
+    <li><a href="#messages">Messages</a></li>
+    <li><a href="#tribute">Hommage</a></li>
+  </ul>
+  <div id="nav-hamburger" class="nav-hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- COVER -->
+<section id="cover">
+  <div class="cover-bg"></div>
+  <div class="cover-ornament"></div>
+  <div class="cover-ornament"></div>
+
+  <div class="cover-photo-frame" id="cover-photo-frame">
+    <div class="cover-photo-placeholder" id="cover-placeholder">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+        <polyline points="21,15 16,10 5,21"/>
+      </svg>
+       <img src="images/image1.jpeg" alt="">
+    </div>
+  </div>
+
+  <div class="cover-content">
+    <div class="cover-issue-label">Édition Spéciale Anniversaire</div>
+    <div class="cover-title">
+      <div class="italic gold">Jennifer</div>
+      <div>Allou</div>
+    </div>
+    <div class="cover-subtitle">Joyeux Anniversaire Mon COEUR — Une Femme Extraordinaire</div>
+    <div class="cover-divider"></div>
+    <div class="cover-headlines" id="cover-headlines">
+      <div class="cover-headline">✦ <strong>Exclusive:</strong> Son histoire, sa vie, ses rêves</div>
+      <div class="cover-headline">✦ <strong>Portrait:</strong> La femme derrière le sourire</div>
+      <div class="cover-headline">✦ <strong>Spécial:</strong> Messages de ceux qui l'aiment</div>
+      <div class="cover-headline">✦ <strong>Galerie:</strong> Ses plus beaux moments</div>
+    </div>
+  </div>
+
+  <div class="cover-scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Défiler</span>
+  </div>
+</section>
+
+<!-- EDITOR'S LETTER -->
+<section id="editors-letter">
+  <div class="section-wrap">
+    <div class="letter-container">
+      <div class="letter-left">
+        <div class="letter-issue-number">01</div>
+        <div class="letter-label">La lettre de la rédaction</div>
+        <div class="letter-signature" id="letter-signature">Avec tout notre amour,<br>Tes proches ✦</div>
+      </div>
+      <div class="letter-right">
+        <h2 id="letter-title">Célébrons Jennifer — <em>une âme rare dans un monde ordinaire.</em></h2>
+        <p class="drop-cap" id="letter-body1">Il est des personnes dont la présence illumine chaque pièce qu'elles traversent. Des femmes dont le rire résonne longtemps après leur départ, dont les mots portent et dont le cœur est d'une générosité infinie. Jennifer Allou est l'une de ces rares merveilles.</p>
+        <p id="letter-body2">Ce magazine n'est pas simplement une célébration d'un anniversaire. C'est un hommage à une vie vécue avec passion, authenticité et élégance. Chaque page est une déclaration d'amour, chaque photo un témoignage, chaque mot une promesse que ton histoire mérite d'être racontée et célébrée.</p>
+        <p id="letter-body3">Aujourd'hui, nous t'offrons ce qui t'appartient de droit : un espace entièrement dédié à toi, à ta beauté, à ta lumière. Bon anniversaire, Jennifer. Le monde est plus beau parce que tu y es.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERVIEW -->
+<section id="interview">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-eyebrow">Portrait Exclusif</div>
+      <div class="section-title">Ce qu'on a <br>à te dire</div>
+      <div class="section-rule"></div>
+      <div class="section-subtitle">Des messages que chacun a prit son temps pour ecrire — mais si vraie</div>
+    </div>
+
+    <div class="interview-grid" id="interview-grid">
+      <!-- Populated by JS -->
+    </div>
+
+    <div class="interview-featured-quote">
+      <div class="featured-quote-text" id="featured-quote">
+        "Elle porte en elle quelque chose que les mots peinent à saisir — une lumière douce et persistante, comme une étoile qui refuse de s'éteindre."
+      </div>
+      <div class="featured-quote-attr">— Le Magazine ✦ The Birthday Issue</div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO GALLERY -->
+<section id="gallery">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-eyebrow">Collection Photographique</div>
+      <div class="section-title light">La Galerie de Jennifer</div>
+      <div class="section-rule"></div>
+      <div class="section-subtitle section-subtitle--light">Chaque image, un moment précieux</div>
+    </div>
+
+    <div class="gallery-grid" id="gallery-grid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO GALLERY -->
+<section id="videos">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-eyebrow">Galerie Vidéo</div>
+      <div class="section-title light">Moments en Mouvement</div>
+      <div class="section-rule"></div>
+      <div class="section-subtitle section-subtitle--light">Vidéos souvenirs & messages</div>
+    </div>
+
+    <div class="video-grid" id="video-grid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- MEMORIES -->
+<section id="memories">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-eyebrow">Histoires & Souvenirs</div>
+      <div class="section-title">Les Mémoires de Jennifer</div>
+      <div class="section-rule"></div>
+      <div class="section-subtitle">Ces moments qui restent gravés dans le cœur</div>
+    </div>
+
+    <div class="memories-grid" id="memories-grid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-eyebrow">Sa Vie en Chronologie</div>
+      <div class="section-title light">Les Grands Moments</div>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="timeline-line"></div>
+    <div class="timeline-list" id="timeline-list">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- MESSAGES -->
+<section id="messages">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-eyebrow">Pour Jennifer</div>
+      <div class="section-title">Messages d'Amour</div>
+      <div class="section-rule"></div>
+      <div class="section-subtitle">Des mots venant du cœur</div>
+    </div>
+
+    <div class="messages-grid" id="messages-grid">
+      <!-- Populated by JS -->
+    </div>
+
+    <div class="message-form">
+      <h3>Laissez un message ✦</h3>
+      <div class="form-field">
+        <label>Votre nom</label>
+        <input type="text" id="msg-name" placeholder="Jennifer Doe">
+      </div>
+      <div class="form-field">
+        <label>Votre message</label>
+        <textarea id="msg-text" rows="4" placeholder="Écrivez votre message pour Jennifer..."></textarea>
+      </div>
+      <button id="submit-message-btn" class="submit-btn">Envoyer mon message ✦</button>
+    </div>
+  </div>
+</section>
+
+<!-- FUN FACTS -->
+<section id="fun-facts">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-eyebrow">Le Saviez-Vous ?</div>
+      <div class="section-title light">Jennifer en Chiffres</div>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="facts-grid" id="facts-grid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO ESSAY -->
+<section id="photo-essay">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-eyebrow">Photo Essay</div>
+      <div class="section-title">L'Art d'Être Jennifer</div>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="essay-intro">
+      <p id="essay-intro-text">Il y a dans chaque image de Jennifer une histoire silencieuse. Une façon d'être dans le monde qui lui est propre — élégante, chaleureuse, inimitable. Ces photos ne sont pas de simples instants capturés. Ce sont des fragments d'une âme belle.</p>
+    </div>
+
+    <div class="essay-layout" id="essay-layout">
+      <div class="essay-block essay-placeholder-block essay-placeholder-block--main">
+        <div class="essay-placeholder-inner">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          <p class="essay-placeholder-label">Photo principale</p>
+        </div>
+      </div>
+      <div class="essay-text-block">
+        <h3 id="essay-title1">"Sa lumière dépasse toutes les photos."</h3>
+        <p id="essay-text1">Jennifer possède cette rare qualité de rendre chaque moment mémorable. Sa présence transforme les instants ordinaires en souvenirs extraordinaires. Elle rit avec tout son être, aime sans retenue et vit avec une intensité qui force l'admiration.</p>
+      </div>
+      <div class="essay-block essay-placeholder-block">
+        <div class="essay-placeholder-inner">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+        </div>
+      </div>
+      <div class="essay-text-block">
+        <h3 id="essay-title2">"Une femme multidimensionnelle."</h3>
+        <p id="essay-text2">Derrière le sourire se cachent des profondeurs insoupçonnées. Jennifer est à la fois la force tranquille et la joie explosive, l'écoute attentive et la parole qui libère. C'est cette complexité magnifique qui la rend si inoubliable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL TRIBUTE -->
+<section id="tribute">
+  <div class="tribute-bg-text">JENNIFER</div>
+  <div class="tribute-content section-wrap tribute-content--visible">
+    <div class="tribute-stars">
+      <span class="tribute-star">✦</span>
+      <span class="tribute-star">✦</span>
+      <span class="tribute-star">✦</span>
+      <span class="tribute-star">✦</span>
+      <span class="tribute-star">✦</span>
+    </div>
+    <div class="tribute-title">
+      Joyeux<br><span class="gold">Anniversaire</span>
+    </div>
+    <div class="tribute-message" id="tribute-message">
+      Le monde est plus beau, plus riche et plus lumineux parce que tu existes. Que cette journée soit à ton image — extraordinaire, joyeuse et remplie d'amour infini. Tu mérites chaque étoile dans le ciel.
+    </div>
+    <div class="tribute-rule">
+      <div class="tribute-rule-line"></div>
+      <div class="tribute-rule-diamond"></div>
+      <div class="tribute-rule-line"></div>
+    </div>
+    <div class="tribute-name">Jennifer Allou</div>
+  </div>
+</section>
+
+
+<!-- MODAL -->
+<div id="modal-overlay">
+  <div class="modal-inner">
+    <button id="modal-close-btn" class="modal-close">✕</button>
+    <img class="modal-img" id="modal-img" src="" alt="">
+    <div class="modal-caption" id="modal-caption"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
