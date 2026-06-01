@@ -9,8 +9,8 @@ const defaultStore = {
     { id:4, src:'images/image4.jpeg', caption:'La lumière dans ses yeux', collection:'Portraits', desc:'Sa présence unique' },
     { id:5, src:'images/image5.jpeg', caption:'Style inimitable', collection:'Mode', desc:'Toujours impeccable' },
     { id:6, src:'images/image6.jpeg', caption:'Rires partagés', collection:'Trop Belle', desc:'La joie de vivre' },
-    { id:7, src:'images/image7.jpeg', caption:'Un regard qui parle', collection:'Portraits', desc:'Profondeur et douceur' },
-    { id:8, src:'images/image8.jpeg', caption:'Moments de bonheur', collection:'Lifestyle', desc:'Chaque instant est précieux' },
+    { id:7, src:'images/image8.jpeg', caption:'Un regard qui parle', collection:'Portraits', desc:'Profondeur et douceur' },
+    { id:8, src:'images/image7.jpeg', caption:'Moments de bonheur', collection:'Lifestyle', desc:'Chaque instant est précieux' },
     { id:9, src:'images/image9.jpeg', caption:'Sa beauté singulière', collection:'Portraits', desc:'Unique en son genre' },
     { id:10, src:'images/image10.jpeg', caption:'Soirée mémorable', collection:'Événements', desc:'Une nuit inoubliable' }
   ],
