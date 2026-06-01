@@ -1,23 +1,24 @@
 // ============================================================
 //  DATA STORE
 // ============================================================
-let store = JSON.parse(localStorage.getItem('ja_magazine_data') || 'null') || {
+const defaultStore = {
   photos: [
-    { id:1, src:'', caption:'Un sourire qui illumine tout', collection:'Portraits', desc:'Un moment de pure joie capturé' },
-    { id:2, src:'', caption:'Élégance naturelle', collection:'Lifestyle', desc:'L\'art d\'être soi' },
-    { id:3, src:'', caption:'Entre amis', collection:'Amitié', desc:'Ces moments qui comptent' },
-    { id:4, src:'', caption:'La lumière dans ses yeux', collection:'Portraits', desc:'Sa présence unique' },
-    { id:5, src:'', caption:'Style inimitable', collection:'Mode', desc:'Toujours impeccable' },
-    { id:6, src:'', caption:'Rires partagés', collection:'Amitié', desc:'La joie de vivre' },
-    { id:7, src:'', caption:'Un regard qui parle', collection:'Portraits', desc:'Profondeur et douceur' },
-    { id:8, src:'', caption:'Moments de bonheur', collection:'Lifestyle', desc:'Chaque instant est précieux' },
-    { id:9, src:'', caption:'Sa beauté singulière', collection:'Portraits', desc:'Unique en son genre' },
-    { id:10, src:'', caption:'Soirée mémorable', collection:'Événements', desc:'Une nuit inoubliable' }
+    { id:1, src:'images/image1.jpeg', caption:'Un sourire qui illumine tout', collection:'Portraits', desc:'Un moment de pure joie capturé' },
+    { id:2, src:'images/image2.jpeg', caption:'Élégance naturelle', collection:'Lifestyle', desc:'L\'art d\'être soi' },
+    { id:3, src:'images/image3.jpeg', caption:'magnifique', collection:'Femme Baoule', desc:'Ces moments qui comptent' },
+    { id:4, src:'images/image4.jpeg', caption:'La lumière dans ses yeux', collection:'Portraits', desc:'Sa présence unique' },
+    { id:5, src:'images/image5.jpeg', caption:'Style inimitable', collection:'Mode', desc:'Toujours impeccable' },
+    { id:6, src:'images/image6.jpeg', caption:'Rires partagés', collection:'Trop Belle', desc:'La joie de vivre' },
+    { id:7, src:'images/image7.jpeg', caption:'Un regard qui parle', collection:'Portraits', desc:'Profondeur et douceur' },
+    { id:8, src:'images/image8.jpeg', caption:'Moments de bonheur', collection:'Lifestyle', desc:'Chaque instant est précieux' },
+    { id:9, src:'images/image9.jpeg', caption:'Sa beauté singulière', collection:'Portraits', desc:'Unique en son genre' },
+    { id:10, src:'images/image10.jpeg', caption:'Soirée mémorable', collection:'Événements', desc:'Une nuit inoubliable' }
   ],
   videos: [
     { id:1, type:'youtube', url:'', embedId:'', title:'Message d\'anniversaire', message:'Avec tout notre amour pour ce jour spécial', section:'Messages' },
     { id:2, type:'youtube', url:'', embedId:'', title:'Nos meilleurs souvenirs', message:'Une compilation de moments inoubliables', section:'Souvenirs' }
   ],
+
   memories: [
     { id:1, title:'La première fois qu\'on s\'est rencontré', date:'Un jour mémorable', photo:'', story:'Ce jour-là, quelque chose de spécial s\'est passé. Un sourire échangé, une conversation qui n\'en finissait plus...', video:'' },
     { id:2, title:'Notre aventure ensemble', date:'Une belle période', photo:'', story:'On dit que les meilleures histoires sont celles qu\'on n\'aurait jamais pu imaginer. La nôtre en est la preuve.', video:'' },
@@ -78,6 +79,17 @@ Joyeux anniversaire à ma meilleure amie je t’aime ❤️`, author:'Reine' }
   ],
   coverPhotoSrc: ''
 };
+
+let store;
+const persistedData = JSON.parse(localStorage.getItem('ja_magazine_data') || 'null');
+if (persistedData && typeof persistedData === 'object') {
+  store = { ...defaultStore, ...persistedData };
+  if (!Array.isArray(store.photos) || store.photos.some(p => !p || !p.src)) {
+    store.photos = defaultStore.photos;
+  }
+} else {
+  store = defaultStore;
+}
 
 function saveStore() {
   try { localStorage.setItem('ja_magazine_data', JSON.stringify(store)); } catch(e) {}
