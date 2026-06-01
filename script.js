@@ -368,53 +368,67 @@ function attachUIListeners() {
 
 // ============================================================
 // BACKGROUND AUDIO
-// Attempts to autoplay; if blocked, starts on first user interaction.
-// Replace the audio source in the HTML (`assets/audio/bg-music.mp3`).
+// Autoplay audio immediately with muted, then unmute on first user interaction.
 function initBackgroundAudio() {
   const audio = document.getElementById('bg-audio');
   if (!audio) return;
-  // sensible default volume
-  audio.volume = 0.6;
 
+  audio.volume = 0.7;
   audio.muted = true;
   audio.playsInline = true;
 
-  const unmuteIfPlaying = () => {
-    if (!audio.paused) {
-      audio.muted = false;
-      audio.volume = 0.7;
-    }
-  };
-
-  const tryPlay = () => {
+  const tryPlayAudio = () => {
     const p = audio.play();
     if (p !== undefined) {
       p.then(() => {
-        setTimeout(unmuteIfPlaying, 100);
-      }).catch(() => {
-        // Autoplay blocked entirely. Keep trying when visibility changes or page becomes active.
+        // Début de la lecture réussie, unmute après un court délai
+        setTimeout(() => {
+          audio.muted = false;
+        }, 200);
+      }).catch((err) => {
+        // Si l'autoplay est bloqué, on attend une interaction utilisateur
       });
     }
   };
 
-  audio.addEventListener('ended', tryPlay);
+  // Tentative immédiate
+  tryPlayAudio();
+
+  // Retry si la lecture s'arrête
+  audio.addEventListener('ended', tryPlayAudio);
   audio.addEventListener('pause', () => {
-    if (!document.hidden) setTimeout(tryPlay, 100);
+    if (!document.hidden) setTimeout(tryPlayAudio, 500);
   });
-  audio.addEventListener('error', () => setTimeout(tryPlay, 200));
 
-  tryPlay();
-  const retryPlayback = setInterval(() => {
-    if (audio.paused && !document.hidden) tryPlay();
-  }, 3000);
+  // Retry périodique
+  const retryInterval = setInterval(() => {
+    if (audio.paused && !document.hidden) tryPlayAudio();
+  }, 2000);
 
+  // Fallback: au premier clic/toucher, unmute et lance la lecture
+  const unmuteTrigger = () => {
+    audio.muted = false;
+    tryPlayAudio();
+    // Ne déclencher qu'une seule fois
+    document.removeEventListener('click', unmuteTrigger);
+    document.removeEventListener('touchstart', unmuteTrigger);
+    document.removeEventListener('keydown', unmuteTrigger);
+  };
+
+  document.addEventListener('click', unmuteTrigger, { once: true });
+  document.addEventListener('touchstart', unmuteTrigger, { once: true });
+  document.addEventListener('keydown', unmuteTrigger, { once: true });
+
+  // Reprendre si page devient visible
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible') tryPlay();
+    if (document.visibilityState === 'visible') tryPlayAudio();
   });
-  window.addEventListener('focus', tryPlay);
+  window.addEventListener('focus', tryPlayAudio);
 
-  // Pause audio when page is unloaded to be explicit
-  window.addEventListener('pagehide', () => { try { audio.pause(); clearInterval(retryPlayback); } catch(e){} });
+  // Cleanup
+  window.addEventListener('pagehide', () => {
+    try { audio.pause(); clearInterval(retryInterval); } catch(e){}
+  });
 }
 
 // ============================================================
