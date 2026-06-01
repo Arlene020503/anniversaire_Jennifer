@@ -31,9 +31,34 @@ let store = JSON.parse(localStorage.getItem('ja_magazine_data') || 'null') || {
     { id:5, year:'Aujourd\'hui', title:'Ce bel anniversaire', desc:'Une journée pour célébrer tout ce qu\'elle est et tout ce qu\'elle va devenir.' }
   ],
   messages: [
-    { id:1, text:'Jennifer, tu es la définition même de la grâce. Chaque jour à tes côtés est un cadeau. Joyeux anniversaire !', author:'Famille & Amis' },
-    { id:2, text:'Ton sourire est capable de transformer les journées les plus grises en instants de pur bonheur. Merci d\'exister.', author:'Tes proches' },
-    { id:3, text:'À une femme qui mérite tous les éloges et toutes les célébrations. Aujourd\'hui c\'est ta journée !', author:'Avec amour' }
+    { id:1, text:`🎉🎂 Joyeux anniversaire, Jennifer ! 🎂🎉
+
+Je ne sais pas vraiment comment exprimer tout ce que je ressens dans un long texte, mais une chose est certaine : je t’aime énormément, bien plus que les mots ne peuvent le décrire. ❤️
+
+En ce jour si spécial, je prie Dieu de te protéger, de veiller sur toi et de te combler de bonheur, de santé et de réussite. 🙏✨ J’espère de tout cœur que ce cadeau te plaira et qu’il te fera sourire autant que tu le mérites. 🎁💖
+
+Que Dieu t’accorde ce que ton cœur désire le plus et qu’Il t’ouvre les portes des plus belles opportunités. 🌷🌟 Tu es une personne précieuse, et je te souhaite une année remplie de joie, d’amour, de paix et de magnifiques souvenirs. 🥰💐
+
+N’oublie jamais que tu as une amie qui sera toujours là pour toi, dans les bons comme dans les mauvais moments. Tu peux compter sur moi quand tu en as besoin. 🤗❤️
+
+Profite pleinement de cette journée qui est la tienne. Je t’aime très fort et je te souhaite encore un merveilleux anniversaire ! 🎉🎊💝
+
+Avec toute mon affection,`, author:'ASSOUA ARLENE' },
+    { id:2, text:`Joyeux anniversaire ma Jenni 🤍
+
+Tu es de loin l’une des meilleures rencontres amicales que j’ai faites dans ma vie.
+Au début on ne se supportait même pas en vrai 🤣🤣 et voilà qu’aujourd’hui nous sommes plus proches que jamais. On en a vécu des choses toutes les deux 🤣🤍
+
+Après avoir commencé à vraiment te côtoyer, j’ai découvert la belle personne que tu es.
+
+Merci d’être là et surtout ne change jamais.
+Je t’aime 🫶🏾`, author:'Andrea' },
+    { id:3, text:`Je suis pas quelqu’un d’ouverte, je suis pas quelqu’un qui aime parler de ses problèmes, de ses sentiments mais avec toi j’y arrive plus, tu es la personne qui sait le plus de choses sur moi, la personne avec qui je suis plus alaise de parler de certaines choses. J’ai la chance immense d’avoir trouvé en une seule personne une cousine, une meilleure amie, une sœur et un refuge.
+Je ne sais pas où la vie nous emmènera demain. Peut-être que beaucoup de choses changeront. Peut-être qu’on grandira encore, qu’on prendra des chemins différents, qu’on vivra mille choses. Mais il y a une chose dont je suis certaine peu importe le temps, peu importe la distance, peu importe la vie… tu resteras toujours ma meilleure amie.
+Je veux que tu saches aujourd’hui que tu mérites absolument tout ce qu’il y a de beau : l’amour sincère, le bonheur, la paix, la réussite, la santé, les rêves accomplis et toutes les belles choses que ton cœur espère.
+Je ne célèbre pas seulement ton anniversaire aujourd’hui. Je célèbre aussi la personne incroyable que tu es.
+
+Joyeux anniversaire à ma meilleure amie je t’aime ❤️`, author:'Reine' }
   ],
   facts: [
     { number:'100', unit:'%', label:'Unique en son genre', desc:'Il n\'en existe qu\'une' },
